@@ -16,6 +16,15 @@ func init() {
 			Filters:          nil,
 			Params:           nil})
 
+	beego.GlobalControllerRouter["restful/controllers:MemberController"] = append(beego.GlobalControllerRouter["restful/controllers:MemberController"],
+		beego.ControllerComments{
+			Method:           "GetOne",
+			Router:           "/one",
+			AllowHTTPMethods: []string{"get"},
+			MethodParams:     param.Make(),
+			Filters:          nil,
+			Params:           nil})
+
 	beego.GlobalControllerRouter["restful/controllers:ObjectController"] = append(beego.GlobalControllerRouter["restful/controllers:ObjectController"],
 		beego.ControllerComments{
 			Method:           "Post",

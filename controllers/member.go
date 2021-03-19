@@ -15,3 +15,10 @@ func (c *MemberController) GetAllCNM() {
 	c.Data["json"] = data
 	_ = c.ServeJSON()
 }
+
+// @router /one [get]
+func (c *MemberController) GetOne() {
+	data := models.GetDBMember()
+	c.Data["json"] = data
+	_ = c.ServeJSON()
+}
